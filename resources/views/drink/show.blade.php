@@ -23,9 +23,9 @@
             </li>
             <li>Preparation: {{$drink->preparation}}</li>
         </ul>
-        <form action="{{route('drink.edit', $drink->id)}}" method="POST">
+        <form action="{{route('drink.edit', $drink->id)}}" method="GET">
             @csrf
-           @method("PUT")
+           @method("GET")
            <input type="submit" value="Edit">
        </form>
         <form action="{{route('drink.destroy', $drink->id)}}" method="POST">
