@@ -2,6 +2,8 @@
     
     @csrf
     @method("PUT")
+        
+
         <input type="text" name="name" placeholder="name" value="{{$drink->name}}">
         <input type="gradation" step="0.01" name="gradation" placeholder="gradation" value="{{$drink->gradation}}">
         <input type="text" name="category" placeholder="category" value="{{$drink->category}}">
@@ -12,14 +14,14 @@
         <input type="text" name="preparation" placeholder="preparation" value="{{$drink->preparation}}">
         <input type="submit" value="Send">
     
-    </form>
+</form>
     
-    @if ($errors->any())
+@if ($errors->any())    
     <div class="alert alert-danger">
         <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+         @endforeach
         </ul>
     </div>
-    @endif
+@endif

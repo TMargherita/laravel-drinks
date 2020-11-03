@@ -13,11 +13,7 @@
             <li>
                 <a href="{{route ('drink.show', $drink->id)}}">{{$drink->name}}</a>
                 <div>
-                    <form action="{{route('drink.edit', $drink->id)}}" method="POST">
-                        @csrf
-                        @method("GET")
-                        <input type="submit" value="Modifica">
-                    </form>
+                    <a href="{{route ('drink.edit', $drink->id)}}">Modifica</a>
                 </div>
                 <div>
                     <form action="{{route('drink.destroy', $drink->id)}}" method="POST">

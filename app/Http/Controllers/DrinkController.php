@@ -53,7 +53,7 @@ class DrinkController extends Controller
 
         $drink =  new Drink;
         $drink->fill($data);
-        $drink->save;
+        $drink->save();
 
         return redirect()->route('drink.show', $drink);
     }
@@ -66,7 +66,7 @@ class DrinkController extends Controller
      */
     public function show(Drink $drink)
     {
-        $drink = Drink::find($id);
+
         return view('drink.show',compact('drink'));
     }
 
@@ -103,7 +103,7 @@ class DrinkController extends Controller
             'preparation'=>"required"
         ]);
         
-        $drink = Food::find($id);
+        $drink = Drink::find($id);
         
         $drink->update($data);
 
